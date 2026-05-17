@@ -1,0 +1,23 @@
+[Unit]
+Description=S.T.A.R. Unit 7 — Gestault Oversight System
+After=network.target
+
+[Service]
+Type=simple
+# ── Edit these two lines to match your setup ──────────────
+User=YOUR_USERNAME
+WorkingDirectory=/home/YOUR_USERNAME/star
+
+ExecStart=/home/YOUR_USERNAME/star/venv/bin/python star_server.py
+Restart=on-failure
+RestartSec=10
+
+# Load the .env file
+EnvironmentFile=/home/YOUR_USERNAME/star/.env
+
+# Logging (view with: journalctl -u star -f)
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
