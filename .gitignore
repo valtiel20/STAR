@@ -1,0 +1,8 @@
+.env
+tasks.json
+notifications.json
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.claude/
